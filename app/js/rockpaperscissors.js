@@ -25,14 +25,24 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return /* Your Expression */;
+    move = move.toLowerCase().trim(); 
+    //validate that the user has chosen a proper value 
+    while ( !((move === 'paper') || (move ==='rock') || (move ==='scissors')) ) {
+        move = getInput().toLowerCase().trim();
+    } 
+    return move;
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return /* Your Expression */;
+    do {
+        var move = randomPlay();
+    }
+    while (!move); 
+
+    return move;
 }
 
 function getWinner(playerMove,computerMove) {
