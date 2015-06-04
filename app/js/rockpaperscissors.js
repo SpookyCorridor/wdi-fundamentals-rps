@@ -137,3 +137,36 @@ function playToFive() {
     return [playerWins, computerWins];
 }
 
+/****************** bonus work function ******************/ 
+
+function playTo(rounds) {
+    console.log("Let's play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;
+    var roundWinner; 
+
+    while (playerWins < rounds && computerWins < rounds) {
+        roundWinner = getWinner( getPlayerMove(getInput()), 
+                                 getComputerMove(randomPlay()) ); 
+        switch (roundWinner) {
+            case 'player':
+                playerWins++;
+                console.log('You win!'); 
+                console.log('Player: ' + playerWins + '\n' 
+                            + 'Computer: ' + computerWins); 
+                break;
+            case 'computer':
+                computerWins++; 
+                console.log('You lose!'); 
+                console.log('Player: ' + playerWins + '\n' 
+                            + 'Computer: ' + computerWins); 
+                break; 
+            default:
+                console.log('Tie');
+                console.log('Player: ' + playerWins + '\n' 
+                            + 'Computer: ' + computerWins); 
+                break;  
+        }
+    }
+    return [playerWins, computerWins];
+}
