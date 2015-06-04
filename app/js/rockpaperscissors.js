@@ -51,6 +51,52 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+    switch (playerMove) {
+        case "rock": //player chose rock 
+            switch (computerMove) {
+                case 'paper':
+                    winner = 'computer'; 
+                    break;
+                case 'scissors':
+                    winner = 'player';
+                    break; 
+                default:
+                    winner = 'tie'; 
+                    break;  
+            }
+        break;   
+        
+        case "paper": //player chose paper
+            switch (computerMove) {
+                case 'scissors':
+                    winner = 'computer'; 
+                    break;
+                case 'rock':
+                    winner = 'player';
+                    break; 
+                default:
+                    winner = 'tie'; 
+                    break; 
+            } 
+        break;   
+        
+        case "scissors": //player chose scissors 
+            switch (computerMove) {
+                case 'rock':
+                    winner = 'computer'; 
+                    break;
+                case 'paper':
+                    winner = 'player'; 
+                    break; 
+                default:
+                    winner = 'tie'; 
+                    break; 
+            } 
+        break; 
+
+        default:
+            console.log('There was an error determining the winner');
+    } // end playerMove switch statement 
     return winner;
 }
 
